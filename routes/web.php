@@ -11,7 +11,6 @@ use App\Http\Controllers\WeatherController;
 use App\Http\Controllers\ConditionController; // 体調記録コントローラーを追加
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Http;
-
 use App\Models\WeatherInfo;
 
 Route::match(['get', 'post'], '/', function () {
