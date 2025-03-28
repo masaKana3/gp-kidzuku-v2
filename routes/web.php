@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Http;
 
 use App\Models\WeatherInfo;
 
-Route::get('/', function () {
+Route::match(['get', 'post'], '/', function () {
     $apiKey = config('services.openweather.key'); // ← .envから取得
     $city = 'Tokyo';
     $url = "https://api.openweathermap.org/data/2.5/weather?q={$city}&appid={$apiKey}&units=metric&lang=ja";
