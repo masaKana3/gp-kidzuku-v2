@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Http;
 use App\Models\WeatherInfo;
 
+Route::get('/check-key', function () {
+    return 'APP_KEY: ' . Config::get('app.key');
+
 Route::match(['get', 'post'], '/', function () {
     $apiKey = config('services.openweather.key'); // ← .envから取得
     $city = 'Tokyo';
