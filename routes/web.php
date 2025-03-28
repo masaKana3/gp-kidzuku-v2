@@ -12,9 +12,11 @@ use App\Http\Controllers\ConditionController; // 体調記録コントローラ�
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Http;
 use App\Models\WeatherInfo;
+use Illuminate\Support\Facades\Config;
 
 Route::get('/check-key', function () {
     return 'APP_KEY: ' . Config::get('app.key');
+});
 
 Route::match(['get', 'post'], '/', function () {
     $apiKey = config('services.openweather.key'); // ← .envから取得
